@@ -21,4 +21,10 @@ class GetNewsTest < Minitest::Test
     articles = @main.get_news("おもてなし", 5)
     assert_true articles[0].length > 0 
   end
+
+  def test_get_news_check_news_count_zero
+    articles = @main.get_news("Git", 0)
+    assert_nil artcles
+  end
+
 end
