@@ -1,42 +1,75 @@
 [![Build Status](https://travis-ci.org/sinsnk/get_news.svg?branch=master)](https://travis-ci.org/sinsnk/get_news)
-# GetNews
+# GetNews の概要
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/get_news`. To experiment with that code, run `bin/console` for an interactive prompt.
+GetNews とは Google ニュースをキーワードで検索し、該当するニュースのタイトルを配列形式で取得するためのライブラリです。
 
-TODO: Delete this and the text above, and describe your gem
 
-## Installation
+## インストール
 
-Add this line to your application's Gemfile:
+アプリケーションの Gemfile に以下の行を記述します。
+
 
 ```ruby
 gem 'get_news'
 ```
 
-And then execute:
+その後、以下のコマンドを実行します。
 
     $ bundle
 
-Or install it yourself as:
+もしくは以下のコマンドを実行します。
 
     $ gem install get_news
 
-## Usage
+GetNews をアンインストールする場合は以下のコマンドを実行します。
 
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/get_news. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
+    $ gem uninstall get_news
 
 
-## License
+## 機能
+* Google ニュースをキーワード検索
 
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+## メソッド一覧
+
+get_news(search_word, news_count)
+
+search_word : String (検索キーワード)
+news_count : Integer (取得条件)
+
+
+## 使用方法
+
+```ruby
+require 'get_news'
+
+#Google ニュースをキーワードで検索
+@main = GetNews::Main.new
+result = @main.get_news('IoT', 20)
+
+#結果表示
+for title in result do
+  print("title : " + title + "¥n")
+end
+
+```
+
+## 開発／テスト
+
+この Gem には MiniTest による単体テスト用コードが用意されています。
+また Travis CI と連携し、テストの自動化を行っています。
+
+https://travis-ci.org/sinsnk/get_news
+
+
+##対応予定機能
+
+* 日付、ニュースカテゴリ情報の追加
+* 複数キーワードによる AND / OR 検索
+
+
+## ライセンス
+
+このソースコードのライセンスは [MIT License](http://opensource.org/licenses/MIT) です。
+
+Copyright (c) 2015 AIIT Framework Development Team D
 
