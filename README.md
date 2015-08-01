@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/sinsnk/get_news.svg?branch=master)](https://travis-ci.org/sinsnk/get_news)
 # GetNews の概要
 
-get_news とは Google ニュースをキーワードで検索し、ヒットしたニュースのタイトルを配列形式で取得するためのライブラリです。
+GetNews とは Google ニュースをキーワードで検索し、該当するニュースのタイトルを配列形式で取得するためのライブラリです。
 
 
 ## インストール
@@ -13,7 +13,7 @@ get_news とは Google ニュースをキーワードで検索し、ヒットし
 gem 'get_news'
 ```
 
-その後以下のコマンドを実行します。
+その後、以下のコマンドを実行します。
 
     $ bundle
 
@@ -21,9 +21,9 @@ gem 'get_news'
 
     $ gem install get_news
 
-アンインストールする場合は以下のコマンドを実行します。
+GetNews をアンインストールする場合は以下のコマンドを実行します。
 
-    $ gem uninstall gemname
+    $ gem uninstall get_news
 
 
 ## 機能
