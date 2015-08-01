@@ -15,7 +15,7 @@ module GetNews
 
       doc = Nokogiri::XML.parse(xml, nil, charset)
 
-      p doc.title
+      return doc.title
     end
   end
 end
