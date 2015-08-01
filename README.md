@@ -22,7 +22,15 @@ gem 'get_news'
     $ gem install get_news
 
 アンインストールする場合は以下のコマンドを実行します。
+
     $ gem uninstall gemname
+
+
+## 用意されているメソッド
+
+getNews
+
+第一引数 : 検索キーワード
 
 
 ## 使用方法
