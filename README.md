@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.org/sinsnk/get_news.svg?branch=master)](https://travis-ci.org/sinsnk/get_news)
+[![Gem Version](https://badge.fury.io/rb/get_news.svg)](http://badge.fury.io/rb/get_news)
+=======
 # GetNews の概要
 
 GetNews とは Google ニュースをキーワードで検索し、該当するニュースのタイトルを配列形式で取得するためのライブラリです。
