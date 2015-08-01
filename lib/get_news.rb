@@ -1,4 +1,4 @@
-#require "get_news/version"
+require "get_news/version"
 require "nokogiri"
 require "open-uri"
 require "uri"
