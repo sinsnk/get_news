@@ -27,13 +27,14 @@ GetNews をアンインストールする場合は以下のコマンドを実行
 
 
 ## 機能
-* Google ニュースをキーワード検索
+* 最新の Google ニュースを取得
+* キーワードでGoogle ニュースを検索
 
 ## メソッド一覧
 
 get_news(search_word, news_count)
 
-search_word : String (検索キーワード)
+search_word : String (検索キーワード。最新ニュースの場合、空文字列を指定)
 news_count : Integer (取得条件)
 
 
@@ -50,6 +51,16 @@ result = @main.get_news('IoT', 20)
 for title in result do
   print("title : " + title + "¥n")
 end
+
+#キーワードを空文字列にした場合、最新のニュースを取得
+@main = GetNews::Main.new
+result = @main.get_news('', 20)
+
+#結果表示
+for title in result do
+  print("title : " + title + "¥n")
+end
+
 
 ```
 
