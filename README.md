@@ -52,8 +52,7 @@ for title in result do
   print("title : " + title + "¥n")
 end
 
-#キーワードを空文字列にした場合、最新のニュースを取得
-@main = GetNews::Main.new
+#キーワードに空文字列を指定した場合、最新のニュースを取得
 result = @main.get_news('', 20)
 
 #結果表示
