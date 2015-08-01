@@ -1,28 +1,33 @@
 [![Build Status](https://travis-ci.org/sinsnk/get_news.svg?branch=master)](https://travis-ci.org/sinsnk/get_news)
-# GetNews
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/get_news`. To experiment with that code, run `bin/console` for an interactive prompt.
+# GetNews の概要
 
 get_news とは Google ニュースをキーワードで検索し、ヒットしたニュースのタイトルを配列形式で取得するためのライブラリです。
 
-## Installation
 
-Add this line to your application's Gemfile:
+## インストール
+
+アプリケーションの Gemfile に以下の行を記述します。
+
 
 ```ruby
 gem 'get_news'
 ```
 
-And then execute:
+その後以下のコマンドを実行します。
 
     $ bundle
 
-Or install it yourself as:
+もしくは以下のコマンドを実行します。
 
     $ gem install get_news
 
-## Usage
+アンインストールする場合は以下のコマンドを実行します。
+    $ gem uninstall gemname
 
+
+## 使用方法
+
+```ruby
 require 'get_news'
 
 #Google ニュースをキーワードで検索
@@ -30,8 +35,11 @@ result = getNews.getNews('keyword')
 
 #結果表示
 pp result
+```
 
-## Development
+## 開発／テスト
+
+この Gem は Travis CI と連携しています。
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
@@ -42,7 +50,9 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/get_news. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
 
 
-## License
+## ライセンス
 
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+このソースコードのライセンスは [MIT License](http://opensource.org/licenses/MIT) です。
+
+Copyright (c) 2015 AIIT Framework Development Team D
 
