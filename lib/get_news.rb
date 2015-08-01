@@ -1,6 +1,7 @@
 require "get_news/version"
 require "nokogiri"
 require "open-uri"
+require "uri"
 
 module GetNews
   class Main
@@ -9,7 +10,7 @@ module GetNews
         return
       end
       
-      url = 'https://news.google.com/news?ned=us&ie=UTF-8&oe=UTF-8&q=' + search_word + '&output=atom&num=' + news_count.to_s + '&hl=ja'
+      url = URI.escape('https://news.google.com/news?ned=us&ie=UTF-8&oe=UTF-8&q=' + search_word + '&output=atom&num=' + news_count.to_s + '&hl=ja')
 
       charset = nil
       xml = open(url) do |f|
@@ -22,8 +23,10 @@ module GetNews
       end
 
       title_array = []
-      for t in doc.xpath('//xmlns:title') 
-        title_array.push(t.text)
+      doc.xpath('//xmlns:title').each_with_index do |val, index|
+        if index != 0
+          title_array.push(val.text)
+        end
       end
 
       title_array
