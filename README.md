@@ -31,9 +31,10 @@ gem 'get_news'
 
 ## メソッド一覧
 
-getNews(keyword)
+get_news(search_word, news_count)
 
-keyword : String (検索キーワード)
+search_word : String (検索キーワード)
+news_count : Integer (取得条件)
 
 
 ## 使用方法
@@ -42,10 +43,14 @@ keyword : String (検索キーワード)
 require 'get_news'
 
 #Google ニュースをキーワードで検索
-result = getNews.getNews('keyword')
+@main = GetNews::Main.new
+result = @main.get_news('IoT', 20)
 
 #結果表示
-pp result
+for title in result do
+  print("title : " + title + "¥n")
+end
+
 ```
 
 ## 開発／テスト
@@ -58,9 +63,8 @@ https://travis-ci.org/sinsnk/get_news
 
 ##対応予定機能
 
-* 件数指定
-* 複数キーワードによる AND / OR 検索
 * 日付、ニュースカテゴリ情報の追加
+* 複数キーワードによる AND / OR 検索
 
 
 ## ライセンス
