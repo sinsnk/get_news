@@ -1,6 +1,6 @@
-require "get_news/version"
-require "nokogiri"
-require "open-uri"
+#require 'get_news/version'
+require 'nokogiri'
+require 'open-uri'
 
 module GetNews
   class Main
@@ -9,7 +9,7 @@ module GetNews
         return
       end
       
-      url = 'https://news.google.com/news?ned=us&ie=UTF-8&oe=UTF-8&q=' + search_word + '&output=atom&num=' + news_count.to_i + '&hl=ja'
+      url = 'https://news.google.com/news?ned=us&ie=UTF-8&oe=UTF-8&q=' + search_word + '&output=atom&num=' + news_count.to_s + '&hl=ja'
 
       charset = nil
       xml = open(url) do |f|
@@ -17,9 +17,16 @@ module GetNews
         f.read
       end
 
-      doc = Nokogiri::XML.parse(xml, nil, charset)
+      doc = Nokogiri::XML(xml) do |config|
+        config.strict.nonet
+      end
 
-      doc.title
+      title_array = []
+      for t in doc.xpath('//xmlns:title') 
+        title_array.push(t.text)
+      end
+
+      title_array
     end
   end
 end
