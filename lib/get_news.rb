@@ -1,6 +1,6 @@
-#require 'get_news/version'
-require 'nokogiri'
-require 'open-uri'
+require "get_news/version"
+require "nokogiri"
+require "open-uri"
 
 module GetNews
   class Main
